@@ -16,7 +16,7 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 def setup(app):
-    app.add_stylesheet("main_stylesheet.css")
+    app.add_css_file("main_stylesheet.css")
 
 extensions = ['breathe']
 breathe_projects = { 'xeus-cling': '../xml' }
@@ -35,3 +35,7 @@ highlight_language = 'c++'
 pygments_style = 'sphinx'
 todo_include_todos = False
 htmlhelp_basename = 'xeus-clingdoc'
+
+language = 'zh_CN'
+locale_dirs = ['../locales/']  # path is example but recommended.
+gettext_compact = False  # optional.

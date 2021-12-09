@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay
+# This file is distributed under the same license as the xeus-cling package.
+# xinetzone <735613050@qq.com>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xeus-cling \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-09 18:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/inline_help.rst:16
+msgid "Inline documentation"
+msgstr ""
+
+#: ../../source/inline_help.rst:19
+msgid "The standard library"
+msgstr ""
+
+#: ../../source/inline_help.rst:21
+msgid ""
+"The ``xeus-cling`` kernel allows users to access help on functions and "
+"classes of the standard library."
+msgstr ""
+
+#: ../../source/inline_help.rst:24
+msgid ""
+"In a code cell, typing ``?std::vector`` will simply display the help page"
+" on vector from the cppreference_ website."
+msgstr ""
+
+#: ../../source/inline_help.rst:30
+msgid "Enabling the quick-help feature for third-party libraries"
+msgstr ""
+
+#: ../../source/inline_help.rst:32
+msgid ""
+"The quick help feature can be enabled for other libraries. To do so, a "
+"doxygen tag file for your library must be placed under the ``xeus-cling``"
+" \"data\" directory of the installation prefix, namely"
+msgstr ""
+
+#: ../../source/inline_help.rst:40
+msgid ""
+"For ``xeus-cling`` to be able to make use of that information, a JSON "
+"configuration file must be placed under the ``xeus-cling`` "
+"`configuration` directory of the installation prefix, namely"
+msgstr ""
+
+#: ../../source/inline_help.rst:50
+msgid ""
+"For more information on how to generate tag files for a doxygen "
+"documentation, check the `relevant section`_ of the doxygen "
+"documentation."
+msgstr ""
+
+#: ../../source/inline_help.rst:53
+msgid "The format for the JSON configuration file is the following"
+msgstr ""
+
+#: ../../source/inline_help.rst:62
+msgid ""
+"For example the JSON configuration file for the documentation of the "
+"standard library is"
+msgstr ""
+
+#: ../../source/inline_help.rst:74
+msgid ""
+"We recommend that you only use the ``https`` protocol for the URL. "
+"Indeed, when the notebook is served over ``https``, content from unsecure"
+" sources will not be rendered."
+msgstr ""
+
+#: ../../source/inline_help.rst:79
+msgid "The case of breathe and sphinx documentation"
+msgstr ""
+
+#: ../../source/inline_help.rst:81
+msgid ""
+"Another popular documentation system is the combination of doxygen and "
+"sphinx, thanks for the breathe_ package, which generates sphinx "
+"documentation using the XML output of doxygen."
+msgstr ""
+
+#: ../../source/inline_help.rst:85
+msgid ""
+"The xhale_ Python package can be used to convert the sphinx inventory "
+"files produced breathe into doxygen tag files."
+msgstr ""
+

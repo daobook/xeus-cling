@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay
+# This file is distributed under the same license as the xeus-cling package.
+# xinetzone <735613050@qq.com>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xeus-cling \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-09 18:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/index.rst:25
+msgid "INSTALLATION"
+msgstr "安装"
+
+#: ../../source/index.rst:31
+msgid "USAGE"
+msgstr "用法"
+
+msgid "xeus-cling"
+msgstr ""
+
+#: ../../source/index.rst:10
+msgid ""
+"xeus-cling is a Jupyter kernel for C++ based on the C++ interpreter cling"
+" and the native implementation of the Jupyter protocol xeus."
+msgstr ""
+"xeus-cling 是一个基于 C++ 解释器 cling 和 Jupyter 协议的原生实现 xeus 的 C++ 的 Jupyter 内核。"
+
+#: ../../source/index.rst:13
+msgid "Introduction"
+msgstr "介绍"
+
+#: ../../source/index.rst:17
+msgid "Licensing"
+msgstr "许可"
+
+#: ../../source/index.rst:19
+msgid ""
+"We use a shared copyright model that enables all contributors to maintain"
+" the copyright on their contributions."
+msgstr ""
+"我们采用共享版权模式，使所有贡献者都能保持其贡献的版权。"
+
+#: ../../source/index.rst:22
+msgid ""
+"This software is licensed under the BSD-3-Clause license. See the LICENSE"
+" file for details."
+msgstr ""
+"本软件以 BSD-3-Clause 许可证授权。详情见 LICENSE 文件"。
+

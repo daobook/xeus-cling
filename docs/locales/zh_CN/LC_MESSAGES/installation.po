@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay
+# This file is distributed under the same license as the xeus-cling package.
+# xinetzone <735613050@qq.com>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xeus-cling \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-09 18:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/installation.rst:21
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/installation.rst:26
+msgid "Using the conda-forge package"
+msgstr "使用 conda-forge 软件包"
+
+#: ../../source/installation.rst:28
+msgid ""
+"A package for xeus-cling is available for the mamba (or conda) package "
+"manager."
+msgstr ""
+"mamba（或 conda）软件包管理器提供了一个用于 xeus-cling 的软件包。"
+
+#: ../../source/installation.rst:37
+msgid "From source with cmake"
+msgstr "用 cmake 从源代码中获取"
+
+#: ../../source/installation.rst:39
+msgid ""
+"You can also install ``xeus-cling`` from source with cmake. This requires"
+" that you have all the dependencies installed in the same prefix."
+msgstr ""
+"你也可以用 cmake 从源代码安装 ``xeus-cling``。这需要你将所有的依赖项安装在同一个前缀中。"
+
+#: ../../source/installation.rst:48
+msgid "On Windows platforms, from the source directory:"
+msgstr "在Windows平台上，从源目录中："
+
+#: ../../source/installation.rst:59
+msgid "Installing the Kernel Spec"
+msgstr "安装内核规格"
+
+#: ../../source/installation.rst:61
+msgid ""
+"When installing xeus-cling in a given installation prefix, the "
+"corresponding Jupyter kernelspecs are installed in the same environment "
+"and are automatically picked up by Jupyter if it is installed in the same"
+" prefix."
+msgstr ""
+"当在给定的安装前缀中安装 xeus-cling 时，相应的 Jupyter kernelspecs 会安装在相同的环境中，"
+"如果 Jupyter 安装在相同的前缀中，则会被自动拾取。"
+
+#: ../../source/installation.rst:63
+msgid ""
+"However, if Jupyter is installed in a different location, it will not "
+"pick up the new kernels. The xeus-cling kernels (for C++11, C++14 and "
+"C++17 respectively) can be registered with the following commands:"
+msgstr ""
+"然而，如果 Jupyter 安装在不同的位置，它将不会接收到新的内核。"
+"xeus-cling 内核（分别用于 C++11、C++14 和 C++17）可以通过以下命令注册："
+
+#: ../../source/installation.rst:71
+msgid ""
+"For more information on the ``jupyter kernelspec`` command, please "
+"consult the ``jupyter_client`` documentation."
+msgstr ""
+"关于 ``jupyter kernelspec`` 命令的更多信息，请查阅 ``jupyter_client`` 文档。"

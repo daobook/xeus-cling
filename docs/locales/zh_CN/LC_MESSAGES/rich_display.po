@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay
+# This file is distributed under the same license as the xeus-cling package.
+# xinetzone <735613050@qq.com>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xeus-cling \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-09 18:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/rich_display.rst:16
+msgid "Displaying rich content"
+msgstr ""
+
+#: ../../source/rich_display.rst:18
+msgid ""
+"The Jupyter rich display system allows displaying rich content in the "
+"Jupyter notebook and other frontend."
+msgstr ""
+
+#: ../../source/rich_display.rst:21
+msgid ""
+"This is achieved by sending mime bundles to the front-end containing "
+"various representations of the data that the frontend may use."
+msgstr ""
+
+#: ../../source/rich_display.rst:24
+msgid ""
+"A mime bundle may contain multiple alternative representations of the "
+"same object for example"
+msgstr ""
+
+#: ../../source/rich_display.rst:27
+msgid "a ``text/html`` representation for the notebook and other web frontends."
+msgstr ""
+
+#: ../../source/rich_display.rst:28
+msgid "a ``text/plain`` representation for the console."
+msgstr ""
+
+#: ../../source/rich_display.rst:30
+msgid ""
+"Besides plain text and html, other mime type can be used such as "
+"``image/png`` or even custom mime type for which a renderer is available "
+"in the front-end."
+msgstr ""
+
+#: ../../source/rich_display.rst:34
+msgid "Default plain text representation"
+msgstr ""
+
+#: ../../source/rich_display.rst:36
+msgid ""
+"By default, xeus-cling provides a plain text representation for any "
+"object."
+msgstr ""
+
+#: ../../source/rich_display.rst:38
+msgid ""
+"In the case of a basic type such as ``double`` or ``int``, the value will"
+" be displayed."
+msgstr ""
+
+#: ../../source/rich_display.rst:41
+msgid ""
+"For sequences (exposing an iterator pair ``begin`` / ``end``), the "
+"content of the sequence is also displayed."
+msgstr ""
+
+#: ../../source/rich_display.rst:44
+msgid "Finally, for more conplex types, the address of the object is displayed."
+msgstr ""
+
+#: ../../source/rich_display.rst:47
+msgid "Providing custom mime representations for user-defined types"
+msgstr ""
+
+#: ../../source/rich_display.rst:49
+msgid ""
+"For a user-defined class ``myns::foo``, you can easily provide a mime "
+"representation taylored to your needs such as a styled ``html`` table "
+"including the values of various attributes."
+msgstr ""
+
+#: ../../source/rich_display.rst:53
+msgid "This can be achieved by simply overloading the function"
+msgstr ""
+
+#: ../../source/rich_display.rst:59
+msgid "in the same namespace ``myns`` as ``foo``."
+msgstr ""
+
+#: ../../source/rich_display.rst:61
+msgid ""
+"The rich display mechanism of ``xeus-cling`` will pick up this function "
+"through argument-dependent-lookup (ADL) and make use of it upon display."
+msgstr ""
+
+#: ../../source/rich_display.rst:65
+msgid "Example: ``image/png`` representation of an image class"
+msgstr ""
+
+#: ../../source/rich_display.rst:67
+msgid ""
+"In this example, the ``im::image`` class holds a buffer read from a file."
+" The ``mime_bundle_repr`` overload defined in the same namespace simply "
+"forwards the buffer to the frontend."
+msgstr ""
+
+#: ../../source/rich_display.rst:105
+msgid "Displaying content in the frontend"
+msgstr ""
+
+#: ../../source/rich_display.rst:107
+msgid ""
+"The first way to display an object in the front-end is to omit the last "
+"semicolon of a code cell. When doing so, the last expression will be "
+"displayed."
+msgstr ""
+
+#: ../../source/rich_display.rst:111
+msgid ""
+"Another way of achieving this, is to include the ``xcpp::display`` "
+"function and passing the object to display. ``xcpp::display`` is defined "
+"in the ``<xcpp/xdisplay.hpp>`` header."
+msgstr ""
+
+#: ../../source/rich_display.rst:119
+msgid ""
+"A subtle distinction between using ``xcpp::display`` and omitting the "
+"last semicolon is that the latter results in a cell `output` including a "
+"prompt number, while the former will only show the rich front-end "
+"representation."
+msgstr ""
+
+#: ../../source/rich_display.rst:123
+msgid ""
+"This behavior is consistent to the Python kernel implementation where "
+"``1`` results in an output while ``print(1)`` result in a display "
+"message."
+msgstr ""
+
