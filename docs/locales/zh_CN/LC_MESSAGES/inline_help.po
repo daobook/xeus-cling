@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay
+# This file is distributed under the same license as the xeus-cling package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xeus-cling \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-14 10:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/inline_help.rst:16
+msgid "Inline documentation"
+msgstr "内嵌式文档"
+
+#: ../../source/inline_help.rst:19
+msgid "The standard library"
+msgstr "标准库"
+
+#: ../../source/inline_help.rst:21
+msgid ""
+"The ``xeus-cling`` kernel allows users to access help on functions and "
+"classes of the standard library."
+msgstr ""
+"``xeus-cling`` 内核允许用户访问关于标准库的函数和类的帮助。"
+
+#: ../../source/inline_help.rst:24
+msgid ""
+"In a code cell, typing ``?std::vector`` will simply display the help page"
+" on vector from the cppreference_ website."
+msgstr ""
+"在代码单元中，输入 ``?std::vector`` 将简单地显示 cppreference_ 网站中关于 vector 的帮助页面。"
+
+#: ../../source/inline_help.rst:30
+msgid "Enabling the quick-help feature for third-party libraries"
+msgstr "启用第三方库的快速帮助功能"
+
+#: ../../source/inline_help.rst:32
+msgid ""
+"The quick help feature can be enabled for other libraries. To do so, a "
+"doxygen tag file for your library must be placed under the ``xeus-cling``"
+" \"data\" directory of the installation prefix, namely"
+msgstr ""
+"快速帮助功能可以为其他库启用。"
+"要做到这一点，你的库的 doxygen 标签文件必须放在安装前缀的 "
+"``xeus-cling`` \"data\" 目录下，即"
+
+#: ../../source/inline_help.rst:40
+msgid ""
+"For ``xeus-cling`` to be able to make use of that information, a JSON "
+"configuration file must be placed under the ``xeus-cling`` "
+"`configuration` directory of the installation prefix, namely"
+msgstr ""
+"为了让 ``xeus-cling`` 能够利用这些信息，"
+"必须在安装前缀的 ``xeus-cling`` ``configuration`` 目录下放置一个 JSON 配置文件，即"
+
+#: ../../source/inline_help.rst:50
+msgid ""
+"For more information on how to generate tag files for a doxygen "
+"documentation, check the `relevant section`_ of the doxygen "
+"documentation."
+msgstr ""
+"关于如何为 doxygen 文档生成标签文件的更多信息，"
+"请查看 doxygen 文档的 `相关部分`_。"
+
+#: ../../source/inline_help.rst:53
+msgid "The format for the JSON configuration file is the following"
+msgstr "JSON 配置文件的格式如下"
+
+#: ../../source/inline_help.rst:62
+msgid ""
+"For example the JSON configuration file for the documentation of the "
+"standard library is"
+msgstr ""
+"例如，标准库的文档的 JSON 配置文件是"
+
+#: ../../source/inline_help.rst:74
+msgid ""
+"We recommend that you only use the ``https`` protocol for the URL. "
+"Indeed, when the notebook is served over ``https``, content from unsecure"
+" sources will not be rendered."
+msgstr ""
+"我们建议你在 URL 中只使用 ``https`` 协议。"
+"的确，当笔记本通过 ``https`` 提供服务时，来自不安全来源的内容将不会被呈现。"
+
+#: ../../source/inline_help.rst:79
+msgid "The case of breathe and sphinx documentation"
+msgstr "breathe 和 Sphinx 文档的案例"
+
+#: ../../source/inline_help.rst:81
+msgid ""
+"Another popular documentation system is the combination of doxygen and "
+"sphinx, thanks for the breathe_ package, which generates sphinx "
+"documentation using the XML output of doxygen."
+msgstr ""
+"另一个流行的文档系统是 doxygen 和 sphinx 的组合，这要感谢 breathe_ 包，"
+"它使用 doxygen 的 XML 输出生成 sphinx 文档。"
+
+#: ../../source/inline_help.rst:85
+msgid ""
+"The xhale_ Python package can be used to convert the sphinx inventory "
+"files produced breathe into doxygen tag files."
+msgstr ""
+"xhale_ Python 软件包可以用来把 breathe 产生的 sphinx 清单文件转换成 doxygen 标签文件。"

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay
+# This file is distributed under the same license as the xeus-cling package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xeus-cling \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-14 10:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/rich_display.rst:16
+msgid "Displaying rich content"
+msgstr "显示富文本的内容"
+
+#: ../../source/rich_display.rst:18
+msgid ""
+"The Jupyter rich display system allows displaying rich content in the "
+"Jupyter notebook and other frontend."
+msgstr ""
+"Jupyter 丰富的显示系统允许在 Jupyter 笔记本和其他前端显示富文本的内容。"
+
+#: ../../source/rich_display.rst:21
+msgid ""
+"This is achieved by sending mime bundles to the front-end containing "
+"various representations of the data that the frontend may use."
+msgstr ""
+"这是通过向前端发送包含前端可能使用的各种数据表示的 mime bundles 来实现的。"
+
+#: ../../source/rich_display.rst:24
+msgid ""
+"A mime bundle may contain multiple alternative representations of the "
+"same object for example"
+msgstr ""
+"一个 mime bundle 可能包含同一对象的多种替代表示，例如"
+
+#: ../../source/rich_display.rst:27
+msgid "a ``text/html`` representation for the notebook and other web frontends."
+msgstr "一个用于笔记本和其他网络前端的 ``text/html`` 表示。"
+
+#: ../../source/rich_display.rst:28
+msgid "a ``text/plain`` representation for the console."
+msgstr "一个用于控制台的 ``text/plain`` 表示。"
+
+#: ../../source/rich_display.rst:30
+msgid ""
+"Besides plain text and html, other mime type can be used such as "
+"``image/png`` or even custom mime type for which a renderer is available "
+"in the front-end."
+msgstr ""
+"除了纯文本和 html，还可以使用其他的 mime 类型，如 ``image/png``，"
+"甚至是在前端有渲染器的自定义 mime 类型。"
+
+#: ../../source/rich_display.rst:34
+msgid "Default plain text representation"
+msgstr "默认的纯文本表示法"
+
+#: ../../source/rich_display.rst:36
+msgid ""
+"By default, xeus-cling provides a plain text representation for any "
+"object."
+msgstr ""
+"默认情况下，xeus-cling 为任何对象提供了一个纯文本表示。"
+
+#: ../../source/rich_display.rst:38
+msgid ""
+"In the case of a basic type such as ``double`` or ``int``, the value will"
+" be displayed."
+msgstr ""
+"如果是基本类型，如 ``double`` 或 ``int``，将显示该值。"
+
+#: ../../source/rich_display.rst:41
+msgid ""
+"For sequences (exposing an iterator pair ``begin`` / ``end``), the "
+"content of the sequence is also displayed."
+msgstr ""
+"对于序列（暴露了一个迭代器对 ``begin`` / ``end``），序列的内容也被显示出来。"
+
+#: ../../source/rich_display.rst:44
+msgid "Finally, for more conplex types, the address of the object is displayed."
+msgstr "最后，对于更复杂的类型，将显示对象的地址。"
+
+#: ../../source/rich_display.rst:47
+msgid "Providing custom mime representations for user-defined types"
+msgstr "为用户定义的类型提供自定义的 mime 表示法"
+
+#: ../../source/rich_display.rst:49
+msgid ""
+"For a user-defined class ``myns::foo``, you can easily provide a mime "
+"representation taylored to your needs such as a styled ``html`` table "
+"including the values of various attributes."
+msgstr ""
+"对于一个用户定义的类 ``myns::foo``，你可以很容易地提供一个适合你需要的 mime 表示，"
+"如一个风格化的 ``html`` 表，包括各种属性的值。"
+
+#: ../../source/rich_display.rst:53
+msgid "This can be achieved by simply overloading the function"
+msgstr "这可以通过简单地重载函数来实现"
+
+#: ../../source/rich_display.rst:59
+msgid "in the same namespace ``myns`` as ``foo``."
+msgstr "与 ``foo`` 在同一个命名空间 ``myns``。"
+
+#: ../../source/rich_display.rst:61
+msgid ""
+"The rich display mechanism of ``xeus-cling`` will pick up this function "
+"through argument-dependent-lookup (ADL) and make use of it upon display."
+msgstr ""
+"``xeus-cling`` 的丰富显示机制将通过参数依赖查询（ADL）拾取这个功能，并在显示时使用它。"
+
+#: ../../source/rich_display.rst:65
+msgid "Example: ``image/png`` representation of an image class"
+msgstr "例如：``image/png`` 表示一个图像类。"
+
+#: ../../source/rich_display.rst:67
+msgid ""
+"In this example, the ``im::image`` class holds a buffer read from a file."
+" The ``mime_bundle_repr`` overload defined in the same namespace simply "
+"forwards the buffer to the frontend."
+msgstr ""
+"在这个例子中，``im::image`` 类持有一个从文件中读取的缓冲区。"
+"定义在同一命名空间的 ``mime_bundle_repr`` 重载只是将缓冲区转发给前端。"
+
+#: ../../source/rich_display.rst:105
+msgid "Displaying content in the frontend"
+msgstr "在前端显示内容"
+
+#: ../../source/rich_display.rst:107
+msgid ""
+"The first way to display an object in the front-end is to omit the last "
+"semicolon of a code cell. When doing so, the last expression will be "
+"displayed."
+msgstr ""
+"在前端显示一个对象的第一种方法是省略代码单元的最后一个分号。"
+"这样做时，最后一个表达式将被显示出来。"
+
+#: ../../source/rich_display.rst:111
+msgid ""
+"Another way of achieving this, is to include the ``xcpp::display`` "
+"function and passing the object to display. ``xcpp::display`` is defined "
+"in the ``<xcpp/xdisplay.hpp>`` header."
+msgstr ""
+"另一种实现方式，是包含 ``xcpp::display`` 函数并传递对象来显示。"
+"``xcpp::display`` 在 ``<xcpp/xdisplay.hpp>`` 头中定义。"
+
+#: ../../source/rich_display.rst:119
+msgid ""
+"A subtle distinction between using ``xcpp::display`` and omitting the "
+"last semicolon is that the latter results in a cell `output` including a "
+"prompt number, while the former will only show the rich front-end "
+"representation."
+msgstr ""
+"使用 ``xcpp::display`` 和省略最后一个分号之间的一个微妙区别是，"
+"后者的结果是单元格 ``output`` 包括提示数字，而前者将只显示丰富的前端表示。"
+
+#: ../../source/rich_display.rst:123
+msgid ""
+"This behavior is consistent to the Python kernel implementation where "
+"``1`` results in an output while ``print(1)`` result in a display "
+"message."
+msgstr ""
+"这种行为与 Python 内核的实现是一致的，``1`` 的结果是一个输出，"
+"而 ``print(1)`` 的结果是一个显示信息。"
