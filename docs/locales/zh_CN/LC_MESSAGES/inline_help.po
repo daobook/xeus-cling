@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/inline_help.rst:16
 msgid "Inline documentation"
-msgstr ""
+msgstr "内联文档"
 
 #: ../../source/inline_help.rst:19
 msgid "The standard library"
-msgstr ""
+msgstr "标准库"
 
 #: ../../source/inline_help.rst:21
 msgid ""
