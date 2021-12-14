@@ -42,8 +42,7 @@ jobs:
         shell: bash
         run: |
           pip install --upgrade pip
-          pip install sphinx breathe
-          conda env create -f environment-dev.yml
+          pip install sphinx breathe sphinx-rtd-theme
           sudo apt-get update
           sudo apt-get install doxygen
 
