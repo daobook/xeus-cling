@@ -42,7 +42,7 @@ jobs:
         shell: bash
         run: |
           pip install --upgrade pip
-          pip install -r sphinx breathe
+          pip install sphinx breathe
           conda env create -f environment-dev.yml
           sudo apt-get update
           sudo apt-get install doxygen
