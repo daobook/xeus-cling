@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>显示富文本的内容 &mdash; xeus-cling  文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Inline documentation" href="inline_help.html" />
+    <link rel="prev" title="魔法命令" href="magics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> xeus-cling
+            <img src="_static/quantstack-white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-the-kernel-spec">安装内核规格</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用法</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="build_options.html">构建选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magics.html">魔法命令</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">显示富文本的内容</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#default-plain-text-representation">默认的纯文本表示法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#providing-custom-mime-representations-for-user-defined-types">为用户定义的类型提供自定义的 mime 表示法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-image-png-representation-of-an-image-class">例如：<code class="docutils literal notranslate"><span class="pre">image/png</span></code> 表示一个图像类。</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#displaying-content-in-the-frontend">在前端显示内容</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inline_help.html">Inline documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">xeus-cling</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>显示富文本的内容</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rich_display.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <style>
+.rst-content .section>img {
+    border: 1px solid #e1e4e5;
+}
+</style><section id="displaying-rich-content">
+<h1>显示富文本的内容<a class="headerlink" href="#displaying-rich-content" title="永久链接至标题">¶</a></h1>
+<p>Jupyter 丰富的显示系统允许在 Jupyter 笔记本和其他前端显示富文本的内容。</p>
+<p>这是通过向前端发送包含前端可能使用的各种数据表示的 mime bundles 来实现的。</p>
+<p>一个 mime bundle 可能包含同一对象的多种替代表示，例如</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>一个用于笔记本和其他网络前端的 <code class="docutils literal notranslate"><span class="pre">text/html</span></code> 表示。</p></li>
+<li><p>一个用于控制台的 <code class="docutils literal notranslate"><span class="pre">text/plain</span></code> 表示。</p></li>
+</ul>
+</div></blockquote>
+<p>除了纯文本和 html，还可以使用其他的 mime 类型，如 <code class="docutils literal notranslate"><span class="pre">image/png</span></code>，甚至是在前端有渲染器的自定义 mime 类型。</p>
+<section id="default-plain-text-representation">
+<h2>默认的纯文本表示法<a class="headerlink" href="#default-plain-text-representation" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，xeus-cling 为任何对象提供了一个纯文本表示。</p>
+<p>如果是基本类型，如 <code class="docutils literal notranslate"><span class="pre">double</span></code> 或 <code class="docutils literal notranslate"><span class="pre">int</span></code>，将显示该值。</p>
+<p>对于序列（暴露了一个迭代器对 <code class="docutils literal notranslate"><span class="pre">begin</span></code> / <code class="docutils literal notranslate"><span class="pre">end</span></code>），序列的内容也被显示出来。</p>
+<p>最后，对于更复杂的类型，将显示对象的地址。</p>
+</section>
+<section id="providing-custom-mime-representations-for-user-defined-types">
+<h2>为用户定义的类型提供自定义的 mime 表示法<a class="headerlink" href="#providing-custom-mime-representations-for-user-defined-types" title="永久链接至标题">¶</a></h2>
+<p>对于一个用户定义的类 <code class="docutils literal notranslate"><span class="pre">myns::foo</span></code>，你可以很容易地提供一个适合你需要的 mime 表示，如一个风格化的 <code class="docutils literal notranslate"><span class="pre">html</span></code> 表，包括各种属性的值。</p>
+<p>这可以通过简单地重载函数来实现</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span><span class="o">::</span><span class="n">json</span><span class="w"> </span><span class="nf">mime_bundle_repr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">foo</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>与 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 在同一个命名空间 <code class="docutils literal notranslate"><span class="pre">myns</span></code>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">xeus-cling</span></code> 的丰富显示机制将通过参数依赖查询（ADL）拾取这个功能，并在显示时使用它。</p>
+<section id="example-image-png-representation-of-an-image-class">
+<h3>例如：<code class="docutils literal notranslate"><span class="pre">image/png</span></code> 表示一个图像类。<a class="headerlink" href="#example-image-png-representation-of-an-image-class" title="永久链接至标题">¶</a></h3>
+<p>在这个例子中，<code class="docutils literal notranslate"><span class="pre">im::image</span></code> 类持有一个从文件中读取的缓冲区。定义在同一命名空间的 <code class="docutils literal notranslate"><span class="pre">mime_bundle_repr</span></code> 重载只是将缓冲区转发给前端。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;xtl/xbase64.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;nlohmann/json.hpp&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">nl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">nlohmann</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">im</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">image</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="n">image</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">ifstream</span><span class="w"> </span><span class="nf">fin</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">m_buffer</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fin</span><span class="p">.</span><span class="n">rdbuf</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">stringstream</span><span class="w"> </span><span class="n">m_buffer</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">nl</span><span class="o">::</span><span class="n">json</span><span class="w"> </span><span class="nf">mime_bundle_repr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">image</span><span class="o">&amp;</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">bundle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nl</span><span class="o">::</span><span class="n">json</span><span class="o">::</span><span class="n">object</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">bundle</span><span class="p">[</span><span class="s">&quot;image/png&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xtl</span><span class="o">::</span><span class="n">base64encode</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">m_buffer</span><span class="p">.</span><span class="n">str</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bundle</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<img alt="_images/image.png" src="_images/image.png" />
+</section>
+</section>
+<section id="displaying-content-in-the-frontend">
+<h2>在前端显示内容<a class="headerlink" href="#displaying-content-in-the-frontend" title="永久链接至标题">¶</a></h2>
+<p>在前端显示一个对象的第一种方法是省略代码单元的最后一个分号。这样做时，最后一个表达式将被显示出来。</p>
+<p>另一种实现方式，是包含 <code class="docutils literal notranslate"><span class="pre">xcpp::display</span></code> 函数并传递对象来显示。<code class="docutils literal notranslate"><span class="pre">xcpp::display</span></code> 在 <code class="docutils literal notranslate"><span class="pre">&lt;xcpp/xdisplay.hpp&gt;</span></code> 头中定义。</p>
+<img alt="_images/display.png" src="_images/display.png" />
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">xcpp::display</span></code> 和省略最后一个分号之间的一个微妙区别是，后者的结果是单元格 <code class="docutils literal notranslate"><span class="pre">output</span></code> 包括提示数字，而前者将只显示丰富的前端表示。</p>
+<p>这种行为与 Python 内核的实现是一致的，<code class="docutils literal notranslate"><span class="pre">1</span></code> 的结果是一个输出，而 <code class="docutils literal notranslate"><span class="pre">print(1)</span></code> 的结果是一个显示信息。</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="magics.html" class="btn btn-neutral float-left" title="魔法命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="inline_help.html" class="btn btn-neutral float-right" title="Inline documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

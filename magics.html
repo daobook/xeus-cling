@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>魔法命令 &mdash; xeus-cling  文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="显示富文本的内容" href="rich_display.html" />
+    <link rel="prev" title="构建选项" href="build_options.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> xeus-cling
+            <img src="_static/quantstack-white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-the-kernel-spec">安装内核规格</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用法</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="build_options.html">构建选项</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">魔法命令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#executable">%%executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file">%%file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timeit">%timeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rich_display.html">显示富文本的内容</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inline_help.html">Inline documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">xeus-cling</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>魔法命令</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/magics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <style>
+.rst-content .section>img {
+    border: 1px solid #e1e4e5;
+}
+</style><section id="magic-commands">
+<h1>魔法命令<a class="headerlink" href="#magic-commands" title="永久链接至标题">¶</a></h1>
+<p>魔法是内核的特殊命令，不是 C++ 编程语言的一部分。</p>
+<p>用符号 <code class="docutils literal notranslate"><span class="pre">%</span></code> 定义了行魔法和 <code class="docutils literal notranslate"><span class="pre">%%</span></code> 定义了单元格魔法。</p>
+<p>在 xeus-cling 中，有一些魔法是可用的。在未来，用户定义的魔法也将被启用。</p>
+<section id="executable">
+<h2>%%executable<a class="headerlink" href="#executable" title="永久链接至标题">¶</a></h2>
+<p>将所有输入的单元格的代码转储到一个可执行的二进制文件中。单元格的内容用于 <cite>main</cite> 函数的主体。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">executable</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="w"> </span><span class="n">linker</span><span class="w"> </span><span class="n">options</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>示例</p></li>
+</ul>
+<img alt="_images/executable.png" src="_images/executable.png" />
+<ul class="simple">
+<li><p>可选参数：</p></li>
+</ul>
+<p>任何额外的参数都会传递给链接器。特别是，这可以与 <code class="docutils literal notranslate"><span class="pre">-l</span></code> 一起使用，以链接额外的库，否则就会被加载到</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma cling load(&quot;...&quot;)</span>
+</pre></div>
+</div>
+<p>此外，一些选项影响了代码的生成：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>-fsanitize=thread</p></td>
+<td><p>用 ThreadSanitizer 启用 instrumentation</p></td>
+</tr>
+<tr class="row-even"><td><p>-g</p></td>
+<td><p>启用可执行文件中的调试信息</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="file">
+<h2>%%file<a class="headerlink" href="#file" title="永久链接至标题">¶</a></h2>
+<p>这个神奇的命令复制了一个名为 <code class="docutils literal notranslate"><span class="pre">filename</span></code> 的文件中的单元格内容。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="n">filename</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>示例</p></li>
+</ul>
+<img alt="_images/file_magic.png" src="_images/file_magic.png" />
+<ul class="simple">
+<li><p>可选参数：</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>-a</p></td>
+<td><p>将内容追加到文件中。</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="timeit">
+<h2>%timeit<a class="headerlink" href="#timeit" title="永久链接至标题">¶</a></h2>
+<p>度量一个行语句（<code class="docutils literal notranslate"><span class="pre">%timeit</span></code>）或一个语句块（<code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>）的执行时间。</p>
+<ul class="simple">
+<li><p>行模式下的用法</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="o">&lt;</span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="n">statement</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>单元格模式下的用法</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="o">&lt;</span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;</span><span class="p">]</span><span class="w"></span>
+<span class="n">statements</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>示例</p></li>
+</ul>
+<img alt="_images/timeit_magic.png" src="_images/timeit_magic.png" />
+<ul class="simple">
+<li><p>可选参数：</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>-n</p></td>
+<td><p>在一个循环中执行给定的语句 &lt;N&gt; 次。如果没有给定这个值，将选择一个拟合值。</p></td>
+</tr>
+<tr class="row-even"><td><p>-r</p></td>
+<td><p>重复循环迭代 &lt;R&gt; 次，取最佳结果。默认值：7</p></td>
+</tr>
+<tr class="row-odd"><td><p>-p</p></td>
+<td><p>使用 &lt;P&gt; 位的精度来显示计时结果。默认值：3</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build_options.html" class="btn btn-neutral float-left" title="构建选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rich_display.html" class="btn btn-neutral float-right" title="显示富文本的内容" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2017, Johan Mabille, Loic Gouarin and Sylvain Corlay.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
